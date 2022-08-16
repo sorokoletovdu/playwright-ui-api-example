@@ -1,0 +1,22 @@
+{
+  "name": "playwright-ui-api-example",
+  "version": "1.0.0",
+  "description": "An example of using Playwright for UI and API e2e tests",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sorokoletovdu/playwright-ui-api-example.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sorokoletovdu/playwright-ui-api-example/issues"
+  },
+  "homepage": "https://github.com/sorokoletovdu/playwright-ui-api-example#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.25.0",
+    "allure-playwright": "^2.0.0-beta.19"
+  }
+}
