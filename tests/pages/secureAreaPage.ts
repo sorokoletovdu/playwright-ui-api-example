@@ -17,7 +17,7 @@ export class SecureArea extends BasePage {
         await expect(this.page).toHaveURL(/.*secure/);
     }
 
-    async openLoginPage() {
+    async openSecureArea() {
         await this.page.goto('/secure');
     }
 }

@@ -37,7 +37,7 @@ test.describe('Positive login scenario', () => {
         expect(await loginPage.getFooterText()).toBe('Powered by Elemental Selenium');
     });
 
-    test('A secure area shoud be opened after login with a default credentials', async ({ loginPage, secureArea, page }) => {
+    test('A secure area should be opened after login with a default credentials', async ({ loginPage, secureArea, page }) => {
         await loginPage.usernameInput.fill(DEFAULT_USERNAME);
         await loginPage.passwordInput.fill(DEFAULT_PASSWORD);
         await loginPage.loginButton.click();
@@ -56,7 +56,8 @@ test.describe('Positive login scenario', () => {
             borderColor: 'rgb(69, 122, 26)',
             color: 'rgb(255, 255, 255)'
         });
-        await secureArea.checkSuccessNotificationText('You logged into a secure area!')
+        await secureArea.checkSuccessNotificationText('You logged into a secure area!');
+        await secureArea.closeNotification();
     });
 });
 
@@ -84,5 +85,22 @@ test.describe('Negative login scenario', async () => {
             await loginPage.checkErrorNotificationText(`Your ${type} is invalid!`);
             await loginPage.closeNotification();
         });    
-    }
+    };
+
+    test('The error message for navigating to secure area without login should be specific', async ({ loginPage, secureArea, page }) => {
+        await secureArea.openSecureArea();
+
+        await loginPage.checkLoginPageOpened();
+
+        await expect(loginPage.errorNotification).toBeVisible();
+        await loginPage.checkErrorNotificationStyle({
+            backgroundColor: 'rgb(198, 15, 19)',
+            borderColor: 'rgb(151, 11, 14)',
+            color: 'rgb(255, 255, 255)'
+        });
+        await loginPage.checkErrorNotificationText('You must login to view the secure area!');
+        await loginPage.closeNotification();
+
+
+    })
 })
