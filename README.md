@@ -7,24 +7,40 @@ I implemented UI tests with the use of POM and Playwright fixtures.
 
 The tests were divided into two parts: positive and negative scenarios.
 
-As positive scenarios were considered the following cases:
+The following cases were considered positive scenarios:
 - the initial appearance of all elements of the Login page without any errors;
 - the happy path for login with the default username and password.
 
-As negative scenarios were considered the following cases:
+The following cases were considered negative scenarios:
 - an incorrect username with the specific error message;
-- an incorrect password with its own specific error message.
+- an incorrect password with a specific error message.
 
 API e2e flow was implemented as a single test where all parts are executed as test steps.  
 During the flow:
-- on registration step is checking user ID,
-- on registration and login step is collecting token.  
+- the user ID is verified on the registration step
+- tokens are collected on the registration and login step.  
 
-At the end of the test I verify that registration token equals login token.
+At the end of the test, I verify that the registration token equals the login token.
+
+## Selected technology stack
+
+Playwright was selected as a base for the test framework. There are several reasons for it:
+- Playwright is the most modern technology for UI and API test automation
+- Playwright offers additional tools for recording, debugging, and analyzing tests
+- All features of Playwright are free
+- Playwright offers a parallel execution by default
+- The easiest framework to set up
+- Playwright supports all modern rendering engines including Chromium, WebKit, and Firefox
+- Playwright offers an API for use in TypeScript, JavaScript, Python, .NET, and Java.
+- etc -> https://playwright.dev/
+
+TypeScript was selected as a programming language, because of hands-on experience, and the fact that TypeScript is one of the native languages for Playwright.
+
+Page Object Model is one of the best-known patterns for web app test automation. POM offers a clear structure for test implementation, maintenance, and updating. Using POM, the test framework could be easily scaled.
 
 ## Dependencies
 
-Make sure that you have installed on your machine:
+Please make sure that you have installed on your machine:
 - Git
 - Node.js
 - Allure.
@@ -119,3 +135,10 @@ npx playwright test apiExample.spec.ts
 ```sh
 allure serve
 ```
+
+## Steps for improvements
+
+- Split test into groups: component, e2e, smoke, regression
+- Add component tests for each endpoint: positive, negative
+- Add JSON schema verification for all endpoints
+- Allocate logical parts into separate methods: getAllUsers(), getUser(id: number), registerUser(email: string, username: string, password: string), etc.
