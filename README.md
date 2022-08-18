@@ -15,6 +15,12 @@ As negative scenarios were considered the following cases:
 - an incorrect username with the specific error message;
 - an incorrect password with its own specific error message.
 
+API e2e flow was implemented as a single test where all parts are executed as test steps.  
+During the flow:
+- on registration step is checking user ID,
+- on registration and login step is collecting token.  
+
+At the end of the test I verify that registration token equals login token.
 
 ## Technologies
 - TypeScript
