@@ -1,4 +1,4 @@
-import type { PlaywrightTestConfig } from '@playwright/test';
+import { expect, PlaywrightTestConfig } from '@playwright/test';
 import { devices } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
@@ -11,8 +11,6 @@ const config: PlaywrightTestConfig = {
   reporter: [['list'], ['allure-playwright']],
   use: {
     actionTimeout: 0,
-    /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://localhost:3000',
   },
 
   projects: [
