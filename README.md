@@ -38,7 +38,7 @@ npm install
 
 Run all tests 
 ```sh
-npx playwright test uiExample.spec.ts
+npx playwright test
 ```
 
 Run the UI tests 
