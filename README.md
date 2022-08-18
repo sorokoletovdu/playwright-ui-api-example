@@ -22,22 +22,72 @@ During the flow:
 
 At the end of the test I verify that registration token equals login token.
 
-## Technologies
-- TypeScript
-- Playwright
-- Allure report for Playwright
+## Dependencies
+
+Make sure that you have installed on your machine:
+- Git
+- Node.js
+- Allure.
+
+### Documentation:
+
+- Git: https://git-scm.com/downloads
+
+Installed version:
+```sh
+% git --version
+
+git version 2.34.1
+```
+
+- Node.js: https://nodejs.org
+
+Installed version:
+```sh
+node --version
+
+v14.18.3
+```
+
+- Allure: https://docs.qameta.io/allure-report/#_get_started
+
+Installed version:
+```sh
+allure --version
+
+2.17.2
+```
+
+- Playwright: https://playwright.dev/docs/intro
+
+Installed version:
+```sh
+npx playwright --version      
+
+Version 1.25.0
+```
 
 ## Get the Code
 1. Clone the repo using a link below
 
 ```sh
-https://github.com/sorokoletovdu/playwright-ui-api-example.git
+git clone https://github.com/sorokoletovdu/playwright-ui-api-example.git
 ```
 
 2. Navigate to the folder with code and install npm packages using:
 
 ```sh
+cd ./playwright-ui-api-example
+```
+
+```sh
 npm install
+```
+
+3. Install Playwright
+
+```sh
+npx playwright install
 ```
 
 ## Run the Tests
