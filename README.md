@@ -42,14 +42,19 @@ npm install
 
 ## Run the Tests
 
-Run all tests 
+Run all tests (headless mode)
 ```sh
 npx playwright test
 ```
 
-Run the UI tests 
+Run the UI tests in headless mode
 ```sh
 npx playwright test uiExample.spec.ts
+```
+
+Run the UI tests in headed mode
+```sh
+npx playwright test uiExample.spec.ts --headed
 ```
 
 Run the API tests 
